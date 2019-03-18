@@ -1,0 +1,240 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+}
+
+
+/**
+ *  Margins
+ */
+ .m-10 {
+     margin: 10px;
+ }
+ .m-20 {
+     margin: 20px;
+ }
+ .m-30 {
+     margin: 30px;
+ }
+ .m-40 {
+     margin: 40px;
+ }
+ .m-50 {
+     margin: 50px;
+ }
+
+ .mt-10 {
+     margin-top: 10px;
+ }
+ .mt-20 {
+     margin-top: 20px;
+ }
+ .mt-30 {
+     margin-top: 30px;
+ }
+ .mt-40 {
+     margin-top: 40px;
+ }
+ .mt-50 {
+     margin-top: 50px;
+ }
+
+ .ml-10 {
+     margin-left: 10px;
+ }
+ .ml-20 {
+     margin-left: 20px;
+ }
+ .ml-30 {
+     margin-left: 30px;
+ }
+ .ml-40 {
+     margin-left: 40px;
+ }
+ .ml-50 {
+     margin-left: 50px;
+ }
+
+ .mb-10 {
+     margin-bottom: 10px;
+ }
+ .mb-20 {
+     margin-bottom: 20px;
+ }
+ .mb-30 {
+     margin-bottom: 30px;
+ }
+ .mb-40 {
+     margin-bottom: 40px;
+ }
+ .mb-50 {
+     margin-bottom: 50px;
+ }
+
+ .mr-10 {
+     margin-right: 10px;
+ }
+ .mr-20 {
+     margin-right: 20px;
+ }
+ .mr-30 {
+     margin-right: 30px;
+ }
+ .mr-40 {
+     margin-right: 40px;
+ }
+ .mr-50 {
+     margin-right: 50px;
+ }
+
+
+/**
+ *  Padding
+ */
+.p-10 {
+    padding: 10px;
+}
+.p-20 {
+    padding: 20px;
+}
+.p-30 {
+    padding: 30px;
+}
+.p-40 {
+    padding: 40px;
+}
+.p-50 {
+    padding: 50px;
+}
+
+.pt-10 {
+    padding-top: 10px;
+}
+.pt-20 {
+    padding-top: 20px;
+}
+.pt-30 {
+    padding-top: 30px;
+}
+.pt-40 {
+    padding-top: 40px;
+}
+.pt-50 {
+    padding-top: 50px;
+}
+
+.pl-20 {
+    padding-left: 20px;
+}
+.pl-30 {
+    padding-left: 30px;
+}
+.pl-40 {
+    padding-left: 40px;
+}
+.pl-50 {
+    padding-left: 50px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+.pb-30 {
+    padding-bottom: 30px;
+}
+.pb-40 {
+    padding-bottom: 40px;
+}
+.pb-50 {
+    padding-bottom: 50px;
+}
+
+.pr-20 {
+    padding-right: 20px;
+}
+.pr-30 {
+    padding-right: 30px;
+}
+.pr-40 {
+    padding-right: 40px;
+}
+.pr-50 {
+    padding-right: 50px;
+}
+
+
+/**
+ *  Backgrounds
+ */
+.bg-light {
+    background: #f8f8f8;
+}
+
+
+/**
+ *  Forms
+ */
+input.styled, textarea.styled {
+    border-radius: 25px;
+    border: solid 1px #e3e3e3;
+    background: #f3f3f3;
+    background: white;
+    color: #a3a3a3;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+textarea.styled {
+    resize: none;
+}
+input.styled:focus, input.styled:hover,
+textarea.styled:focus, textarea.styled:hover {
+    /* box-shadow: 1px 2px 4px rgba(0,0,0,0.15); */
+    border: solid 1px #a9a9a9;
+    transition: 0s;
+}
+
+
+/**
+ *  Buttons
+ */
+.btn {
+    border: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    border-radius: 3em;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #4a5aef;
+    color: white;
+}
+.btn-primary:hover {
+    background: #3f4bbf;
+}
+
+
+/**
+ *  Alignment
+ */
+.text-right {
+    text-align: right;
+}
+
+
+/**
+ *  Text Styling
+ */
+i.icon {
+    font-style: normal !important;
+}

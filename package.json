@@ -1,0 +1,49 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "App to keep track of expenses",
+  "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "scripts": {
+    "webpack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neecholaus/expense-tracker.git"
+  },
+  "keywords": [
+    "expense-tracker",
+    "expenses"
+  ],
+  "author": "Nick Neuman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neecholaus/expense-tracker/issues"
+  },
+  "homepage": "https://github.com/neecholaus/expense-tracker#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "express": "^4.16.4",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
+}

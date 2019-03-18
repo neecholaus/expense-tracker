@@ -1,0 +1,21 @@
+#control-panel-container {
+    flex: 5;
+    padding: 20px;
+    border-right: dotted 1px #e3e3e3;
+}
+
+#details {
+    display: flex;
+}
+
+input[name="title"], input[name="amount"] {
+    flex: 5;
+}
+
+#details input[name="title"] {
+    margin-right: 10px;
+}
+
+#details input[name="amount"] {
+    margin-left: 10px;
+}

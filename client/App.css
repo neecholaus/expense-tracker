@@ -1,0 +1,18 @@
+#main-container {
+    display: flex;
+}
+
+#header {
+    background: linear-gradient(160deg, #a9c1f9, #3a72f4, #4a5aef, #4a5aef);
+    color: white;
+}
+
+#control-panel {
+    flex: 5;
+    padding: 10px;
+}
+
+#history {
+    flex: 5;
+    padding: 10px;
+}

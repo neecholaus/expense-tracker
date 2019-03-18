@@ -1,0 +1,20 @@
+import React, {Component} from 'react';
+import './History.css';
+
+import Expenses from '../Expenses/Expenses';
+
+class History extends Component {
+    render() {
+        return (
+            <div id="history-container">
+                <div className="p-20">
+                    <h2>History</h2>
+                </div>
+                <Expenses
+                    expenses={this.props.expenses} />
+            </div>
+        )
+    }
+}
+
+export default History;
