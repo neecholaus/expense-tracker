@@ -1,3 +1,6 @@
+/**
+ *  Main element
+ */
 .expense {
     font-family: sans-serif;
     background: #f8f8f8;
@@ -20,15 +23,40 @@
     font-size: 14px;
     display: none;
 }
-.expense .primary-details:hover span.indicator {
+.expense .primary-details span.indicator {
     display: block;
 }
 .expense .primary-details .title {
     font-size: 14px;
     color: #939393;
 }
-
 .expense .primary-details .amount {
     color: black;
     margin: 0;
+}
+
+/**
+ *  Dropdown content
+ */
+.expense .secondary-details {
+    display: none;
+}
+.expense.expanded .secondary-details {
+    display: block;
+    border-left: solid 2px #e3e3e3;
+    padding-left: 15px;
+    margin-left: 15px;
+}
+
+/**
+ *  Dropdown indicator
+ */
+.expense .indicator .expanded {
+    display: none;
+}
+.expense.expanded .indicator .closed {
+    display: none;
+}
+.expense.expanded .indicator .expanded {
+    display: block;
 }

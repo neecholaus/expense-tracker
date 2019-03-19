@@ -11,6 +11,9 @@ h1, h2, h3, h4, h5, h6 {
 /**
  *  Margins
  */
+ .m-0 {
+     margin: 0;
+ }
  .m-10 {
      margin: 10px;
  }
@@ -59,6 +62,9 @@ h1, h2, h3, h4, h5, h6 {
      margin-left: 50px;
  }
 
+ .mb-0 {
+     margin-bottom: 0;
+ }
  .mb-10 {
      margin-bottom: 10px;
  }
