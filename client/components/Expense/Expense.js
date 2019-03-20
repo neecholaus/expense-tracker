@@ -29,8 +29,8 @@ class Expense extends Component {
                 className={this.state.expenseClassName.join(' ')}
                 onClick={this.expand}>
                 <div className="primary-details">
-                    <label className="title">{this.props.title}</label>
-                    <h3 className="amount">{this.props.amount}</h3>
+                    <label className="title">{this.props.expense.title}</label>
+                    <h3 className="amount">{this.props.expense.amount}</h3>
 
                     <span className="indicator">
                         <i className="closed fa fa-caret-down" />
@@ -39,8 +39,7 @@ class Expense extends Component {
                 </div>
 
                 <div className="secondary-details">
-                    <p className="m-0">Purchased: <b>N/A</b></p>
-                    <p className="m-0">Category: <b>N/A</b></p>
+                    <p className="m-0">Category: <b>{this.props.expense.category}</b></p>
                 </div>
             </div>
         )

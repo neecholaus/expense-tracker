@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import './ControlPanel.css';
+import Expense from '../../interfaces/Expense';
 
 class ControlPanel extends Component {
     state = {
         title: '',
         amount: '',
-        description: ''
+        category: ''
     }
 
     onChange = e => {
@@ -16,11 +17,16 @@ class ControlPanel extends Component {
     }
 
     addExpense = () => {
-        this.props.addExpense(this.state);
+        let expense = new Expense();
+        expense.title = this.state.title;
+        expense.amount = this.state.amount;
+        expense.category = this.state.category;
+
+        this.props.addExpense(expense);
         this.setState({
             title: '',
             amount: '',
-            description: ''
+            category: ''
         })
     }
 
@@ -47,13 +53,13 @@ class ControlPanel extends Component {
                         />
                 </div>
                 <div id="details">
-                    <textarea
-                        name="description"
+                    <input
+                        type="text"
+                        name="category"
                         className="styled mb-10"
-                        placeholder="Description"
-                        value={this.state.description}
+                        placeholder="Category"
+                        value={this.state.category}
                         onChange={this.onChange}
-                        rows="3"
                         />
                 </div>
                 <div className="text-right">

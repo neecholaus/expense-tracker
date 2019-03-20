@@ -13,7 +13,6 @@ class App extends Component {
 
     addExpense = expense => {
         expense.id = new Date().getTime();
-
         this.setState({
             expenses: [...this.state.expenses, expense]
         });
