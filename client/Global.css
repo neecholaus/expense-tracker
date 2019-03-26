@@ -187,9 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 input.styled, textarea.styled {
     border-radius: 25px;
     border: solid 1px #e3e3e3;
-    background: #f3f3f3;
     background: white;
-    color: #a3a3a3;
     width: 100%;
     padding: 10px 15px;
     font-size: 16px;
@@ -197,14 +195,16 @@ input.styled, textarea.styled {
     cursor: pointer;
     font-family: sans-serif;
 }
+
 textarea.styled {
     resize: none;
 }
+
 input.styled:focus, input.styled:hover,
 textarea.styled:focus, textarea.styled:hover {
-    /* box-shadow: 1px 2px 4px rgba(0,0,0,0.15); */
     border: solid 1px #a9a9a9;
     transition: 0s;
+    outline: none;
 }
 
 
