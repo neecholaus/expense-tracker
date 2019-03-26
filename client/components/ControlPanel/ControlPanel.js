@@ -22,12 +22,28 @@ class ControlPanel extends Component {
         expense.amount = this.state.amount;
         expense.category = this.state.category;
 
-        this.props.addExpense(expense);
-        this.setState({
-            title: '',
-            amount: '',
-            category: ''
+        if(this.expenseIsValid(expense)) {
+            this.props.addExpense(expense);
+            this.setState({
+                title: '',
+                amount: '',
+                category: ''
+            })
+        }
+    }
+
+    /**
+     *  Returns a boolean whether or not all fields have been occupied
+     */
+    expenseIsValid = expense => {
+        // valid until proven invalid
+        let valid = true;
+
+        Object.keys(expense).map(key => {
+            valid = expense[key] == '' ? false : valid
         })
+
+        return valid;
     }
 
     render() {
