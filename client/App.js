@@ -5,10 +5,12 @@ import './App.css';
 
 import ControlPanel from './components/ControlPanel/ControlPanel';
 import History from './components/History/History';
+import Error from './components/Error/Error';
 
 class App extends Component {
     state = {
-        expenses: []
+        expenses: [],
+        errors: []
     }
 
     addExpense = expense => {
@@ -18,17 +20,51 @@ class App extends Component {
         });
     }
 
+    emitError = error => {
+        let id = new Date().getTime();
+
+        this.setState({
+            errors: [...this.state.errors, {id, content: error}]
+        })
+
+        this.dispatchErrorRemoval(id);
+    }
+
+    removeError = id => {
+        this.setState({
+            errors: this.state.errors.filter(error => error.id !== id)
+        })
+    }
+
+    dispatchErrorRemoval = id => {
+        setTimeout(() => {
+            this.removeError(id);
+        }, 3500);
+    }
+
     render() {
         return (
             <div id="pagewrapper">
                 <div id="header" className="p-50">
-                    <h1 className="m-0">Track Your Expenses</h1>
+                    <h1 className="m-0"></h1>
                 </div>
                 <div id="main-container">
                     <ControlPanel
-                        addExpense={this.addExpense} />
+                        addExpense={this.addExpense}
+                        emitError={this.emitError} />
                     <History
                         expenses={this.state.expenses} />
+                </div>
+
+                <div id="appErrors">
+                    {this.state.errors.map(error => {
+                        return (
+                            <Error
+                                key={error.id}
+                                error={error}
+                                removeError={this.removeError} />
+                        )
+                    })}
                 </div>
             </div>
         )

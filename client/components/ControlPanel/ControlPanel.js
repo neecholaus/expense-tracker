@@ -29,6 +29,8 @@ class ControlPanel extends Component {
                 amount: '',
                 category: ''
             })
+        } else {
+            this.props.emitError('Inputs were invalid.');
         }
     }
 

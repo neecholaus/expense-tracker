@@ -16,3 +16,11 @@
     flex: 5;
     padding: 10px;
 }
+
+#appErrors {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    max-width: 300px;
+}
