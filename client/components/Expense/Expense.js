@@ -28,21 +28,24 @@ class Expense extends Component {
 
         let split = [...str];
 
-        while(split.length < 4) split.unshift('0');
+        while(split.length < 3) split.unshift('0');
 
         split.splice(-2, 0, '.');
 
         return `$${split.join('')}`;
     }
 
+    remove = id => {
+        this.props.removeExpense(id);
+    }
+
     render() {
         const {...expense} = this.props.expense;
 
         return (
-            <div
-                className={this.state.expenseClassName.join(' ')}
-                onClick={this.expand}>
-                <div className="primary-details">
+            <div className={this.state.expenseClassName.join(' ')}>
+                <div className="primary-details"
+                    onClick={this.expand}>
                     <label className="title">
                         {expense.title}
                     </label>
@@ -58,6 +61,14 @@ class Expense extends Component {
 
                 <div className="secondary-details">
                     <p className="m-0">Category: <b>{expense.category}</b></p>
+                    <div className="text-right">
+                        <button
+                            type="button"
+                            className="btn btn-danger btn-sm"
+                            onClick={this.remove.bind(this, expense.id)}>
+                            <i className="fa fa-trash mr-10"></i> Delete
+                        </button>
+                    </div>
                 </div>
             </div>
         )

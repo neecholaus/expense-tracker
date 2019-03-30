@@ -11,7 +11,8 @@ class History extends Component {
                     <h2>History</h2>
                 </div>
                 <Expenses
-                    expenses={this.props.expenses} />
+                    expenses={this.props.expenses}
+                    removeExpense={this.props.removeExpense} />
             </div>
         )
     }

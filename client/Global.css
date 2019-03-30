@@ -220,6 +220,14 @@ textarea.styled:focus, textarea.styled:hover {
     transition: all ease 0.3s;
     cursor: pointer;
 }
+.btn:focus {
+    outline: none;
+}
+
+.btn-sm {
+    padding: 9px 18px;
+    font-size: 14px;
+}
 
 .btn-primary {
     background: #4a5aef;
@@ -227,6 +235,14 @@ textarea.styled:focus, textarea.styled:hover {
 }
 .btn-primary:hover {
     background: #3f4bbf;
+}
+
+.btn-danger {
+    background: #e0371d;
+    color: white;
+}
+.btn-danger:hover {
+    background: #aa2712;
 }
 
 

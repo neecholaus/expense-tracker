@@ -9,7 +9,8 @@ class Expenses extends Component {
             this.props.expenses.map(expense => {
                 return <Expense
                     key={expense.id}
-                    expense={expense} />
+                    expense={expense}
+                    removeExpense={this.props.removeExpense} />
             })
         )
     }

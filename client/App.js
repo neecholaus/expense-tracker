@@ -20,6 +20,12 @@ class App extends Component {
         });
     }
 
+    removeExpense = id => {
+        this.setState({
+            expenses: this.state.expenses.filter(expense => expense.id !== id)
+        })
+    }
+
     emitError = error => {
         let id = new Date().getTime();
 
@@ -53,7 +59,8 @@ class App extends Component {
                         addExpense={this.addExpense}
                         emitError={this.emitError} />
                     <History
-                        expenses={this.state.expenses} />
+                        expenses={this.state.expenses}
+                        removeExpense={this.removeExpense} />
                 </div>
 
                 <div id="appErrors">
