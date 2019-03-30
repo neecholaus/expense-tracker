@@ -1,12 +1,30 @@
 import React, {Component} from 'react';
 import './ControlPanel.css';
-import Expense from '../../interfaces/Expense';
 
 class ControlPanel extends Component {
     state = {
         title: '',
         amount: '',
         category: ''
+    }
+
+    validations = {
+        amount: amount => {
+            const formattedAmount = this.amountToInt(this.state.amount);
+            const positive = formattedAmount > 0;
+
+            if(!positive) {
+                // this.props.emitError('Amount must be a positive value.');
+                return false;
+            }
+
+            if(typeof(formattedAmount) !== 'number') {
+                // this.props.emitError('Amount could not be evaluated properly.');
+                return false;
+            }
+
+            return true;
+        }
     }
 
     onChange = e => {
@@ -17,10 +35,11 @@ class ControlPanel extends Component {
     }
 
     addExpense = () => {
-        let expense = new Expense();
-        expense.title = this.state.title;
-        expense.amount = this.state.amount;
-        expense.category = this.state.category;
+        let expense = {
+            title: this.state.title,
+            amount: this.amountToInt(this.state.amount),
+            category: this.state.category
+        };
 
         if(this.expenseIsValid(expense)) {
             this.props.addExpense(expense);
@@ -38,14 +57,26 @@ class ControlPanel extends Component {
      *  Returns a boolean whether or not all fields have been occupied
      */
     expenseIsValid = expense => {
-        // valid until proven invalid
         let valid = true;
 
         Object.keys(expense).map(key => {
-            valid = expense[key] == '' ? false : valid
-        })
+            if(this.validations[key]) {
+                valid = this.validations[key](expense[key]);
+            } else {
+                valid = expense[key] == '' ? false : valid
+            }
+        });
 
         return valid;
+    }
+
+    /**
+     *  Returns an integer formatted as US cents.
+     *  i.e. $45.20 => 4520
+     *  @param string
+     */
+    amountToInt = amount => {
+        return parseInt(amount.replace(/\D/g, ''));
     }
 
     render() {

@@ -23,14 +23,32 @@ class Expense extends Component {
         return this.state.expenseClassName.indexOf('expanded') !== -1;
     }
 
+    amountToStr = int => {
+        const str = int.toString();
+
+        let split = [...str];
+
+        while(split.length < 4) split.unshift('0');
+
+        split.splice(-2, 0, '.');
+
+        return `$${split.join('')}`;
+    }
+
     render() {
+        const {...expense} = this.props.expense;
+
         return (
             <div
                 className={this.state.expenseClassName.join(' ')}
                 onClick={this.expand}>
                 <div className="primary-details">
-                    <label className="title">{this.props.expense.title}</label>
-                    <h3 className="amount">{this.props.expense.amount}</h3>
+                    <label className="title">
+                        {expense.title}
+                    </label>
+                    <h3 className="amount">
+                        {this.amountToStr(expense.amount)}
+                    </h3>
 
                     <span className="indicator">
                         <i className="closed fa fa-caret-down" />
@@ -39,7 +57,7 @@ class Expense extends Component {
                 </div>
 
                 <div className="secondary-details">
-                    <p className="m-0">Category: <b>{this.props.expense.category}</b></p>
+                    <p className="m-0">Category: <b>{expense.category}</b></p>
                 </div>
             </div>
         )
