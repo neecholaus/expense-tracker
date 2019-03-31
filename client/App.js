@@ -17,13 +17,13 @@ class App extends Component {
         expense.id = new Date().getTime();
         this.setState({
             expenses: [...this.state.expenses, expense]
-        });
+        }, this.syncStateToLocal);
     }
 
     removeExpense = id => {
         this.setState({
             expenses: this.state.expenses.filter(expense => expense.id !== id)
-        })
+        }, this.syncStateToLocal);
     }
 
     emitError = error => {
@@ -46,6 +46,32 @@ class App extends Component {
         setTimeout(() => {
             this.removeError(id);
         }, 3500);
+    }
+
+    ensureLocalStorage = () => {
+        const ls = window.localStorage, str = 'expenses';
+
+        if(!ls.getItem(str)) ls.setItem(str, JSON.stringify([]));
+
+        this.syncLocalToState();
+    }
+
+    syncStateToLocal = () => {
+        const ls = window.localStorage;
+
+        ls.setItem('expenses', JSON.stringify(this.state.expenses));
+    }
+
+    syncLocalToState = () => {
+        const ls = window.localStorage;
+
+        const data = JSON.parse(ls.getItem('expenses'));
+
+        this.setState({expenses: data});
+    }
+
+    componentDidMount = () => {
+        this.ensureLocalStorage();
     }
 
     render() {

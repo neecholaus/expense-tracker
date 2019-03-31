@@ -64,9 +64,9 @@ class Expense extends Component {
                     <div className="text-right">
                         <button
                             type="button"
-                            className="btn btn-danger btn-sm"
+                            className="btn-light-outline"
                             onClick={this.remove.bind(this, expense.id)}>
-                            <i className="fa fa-trash mr-10"></i> Delete
+                            <i className="fa fa-trash"></i>
                         </button>
                     </div>
                 </div>

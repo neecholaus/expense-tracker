@@ -1,0 +1,58 @@
+/** Global styling **/
+button {
+    cursor: pointer;
+}
+button:focus {
+    outline: none;
+}
+
+
+/** Styles **/
+.btn {
+    border: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    border-radius: 3em;
+    transition: all ease 0.3s;
+}
+
+.btn-sm {
+    padding: 9px 18px;
+    font-size: 14px;
+}
+
+.btn-light-outline {
+    font-size: 14px;
+    color: #a3a3a3;
+    background: transparent;
+    border: none;
+    transition: all ease 0.3s;
+    padding: 9px 18px;
+    border: solid 1px #e3e3e3;
+    border-radius: 3em;
+    margin: 1px 5px;
+}
+.btn-light-outline:hover {
+    color: #686868;
+    border-color: #a3a3a3;
+    transition: 0s;
+}
+
+
+/** Colors **/
+.btn-primary {
+    background: #4a5aef;
+    color: white;
+}
+.btn-primary:hover {
+    background: #3f4bbf;
+}
+
+.btn-danger {
+    background: #e0371d;
+    color: white;
+}
+.btn-danger:hover {
+    background: #aa2712;
+}

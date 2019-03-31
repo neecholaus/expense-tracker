@@ -1,3 +1,5 @@
+@import '../public/css/buttons.css';
+
 body {
     padding: 0;
     margin: 0;
@@ -205,44 +207,6 @@ textarea.styled:focus, textarea.styled:hover {
     border: solid 1px #a9a9a9;
     transition: 0s;
     outline: none;
-}
-
-
-/**
- *  Buttons
- */
-.btn {
-    border: none;
-    padding: 10px 30px;
-    font-size: 16px;
-    font-family: 'Lato', sans-serif;
-    border-radius: 3em;
-    transition: all ease 0.3s;
-    cursor: pointer;
-}
-.btn:focus {
-    outline: none;
-}
-
-.btn-sm {
-    padding: 9px 18px;
-    font-size: 14px;
-}
-
-.btn-primary {
-    background: #4a5aef;
-    color: white;
-}
-.btn-primary:hover {
-    background: #3f4bbf;
-}
-
-.btn-danger {
-    background: #e0371d;
-    color: white;
-}
-.btn-danger:hover {
-    background: #aa2712;
 }
 
 
