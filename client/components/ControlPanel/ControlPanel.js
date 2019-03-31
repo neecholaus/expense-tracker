@@ -38,7 +38,8 @@ class ControlPanel extends Component {
         let expense = {
             title: this.state.title,
             amount: this.amountToInt(this.state.amount),
-            category: this.state.category
+            category: this.state.category,
+            created_at: new Date()
         };
 
         if(this.expenseIsValid(expense)) {

@@ -3,9 +3,11 @@
  */
 .expense {
     font-family: sans-serif;
-    background: #f8f8f8;
-    border-bottom: dotted 1px #e3e3e3;
-    padding: 5px;
+    background: white;
+    border: solid 1px transparent;
+    border-radius: 27px;
+    padding: 6px 20px;
+    margin: 5px;
 }
 
 /**
@@ -14,6 +16,11 @@
 .expense .primary-details {
     cursor: pointer;
     position: relative;
+    transition: all ease 0.3s;
+}
+.expense:hover:not(.expanded) .primary-details {
+    padding-left: 7px;
+    transition: all ease 0.1s;
 }
 .expense .primary-details span.indicator {
     color: #939393;
@@ -27,7 +34,7 @@
     display: block;
 }
 .expense .primary-details .title {
-    font-size: 14px;
+    font-size: 12px;
     color: #939393;
 }
 .expense .primary-details .amount {
@@ -43,9 +50,10 @@
 }
 .expense.expanded .secondary-details {
     display: block;
-    border-left: solid 2px #e3e3e3;
-    padding-left: 15px;
-    margin-left: 15px;
+    padding-top: 20px;
+}
+.expense .secondary-details p {
+    font-size: 14px;
 }
 
 /**

@@ -1,9 +1,10 @@
 #main-container {
     display: flex;
+    height: calc(100vh - 43px);
 }
 
 #header {
-    background: linear-gradient(160deg, #714fea, #4a5aef);
+    background: #4a5aef;
     color: white;
 }
 

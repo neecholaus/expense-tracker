@@ -1,3 +1,5 @@
 #history-container {
     flex: 5;
+    background: #f8f8f8;
+    height: available;
 }

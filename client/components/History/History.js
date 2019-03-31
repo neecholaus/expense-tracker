@@ -7,7 +7,7 @@ class History extends Component {
     render() {
         return (
             <div id="history-container">
-                <div className="p-20">
+                <div className="p-20 pb-0">
                     <h2>History</h2>
                 </div>
                 <Expenses

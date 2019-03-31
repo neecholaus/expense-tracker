@@ -60,7 +60,14 @@ class Expense extends Component {
                 </div>
 
                 <div className="secondary-details">
-                    <p className="m-0">Category: <b>{expense.category}</b></p>
+                    <p className="m-0">
+                        <i className="fa fa-filter mr-10 text-muted"></i>
+                        {expense.category}
+                    </p>
+                    <p className="m-0">
+                        <i className="fa fa-calendar mr-10 text-muted"></i>
+                        {(new Date(expense.created_at)).toString()}
+                    </p>
                     <div className="text-right">
                         <button
                             type="button"

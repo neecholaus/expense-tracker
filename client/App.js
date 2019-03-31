@@ -77,8 +77,10 @@ class App extends Component {
     render() {
         return (
             <div id="pagewrapper">
-                <div id="header" className="p-50">
-                    <h1 className="m-0"></h1>
+                <div id="header" className="p-10 pl-20">
+                    <h3 className="m-0">
+                        Expense Tracker
+                    </h3>
                 </div>
                 <div id="main-container">
                     <ControlPanel
