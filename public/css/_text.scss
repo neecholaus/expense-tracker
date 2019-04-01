@@ -1,0 +1,15 @@
+/** Colors **/
+.text {
+    &-muted {
+        color: #d3d3d3;
+    }
+
+    &-right {
+        text-align: right;
+    }
+}
+
+/** Text Styling **/
+i.icon {
+    font-style: normal !important;
+}

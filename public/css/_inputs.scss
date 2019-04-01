@@ -1,0 +1,19 @@
+input {
+    &.styled {
+        border-radius: 25px;
+        border: solid 1px #e3e3e3;
+        background: white;
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 16px;
+        transition: all ease 0.3s;
+        cursor: pointer;
+        font-family: sans-serif;
+
+        &:focus, &:hover {
+            border: solid 1px #a9a9a9;
+            transition: 0s;
+            outline: none;
+        }
+    }
+}
