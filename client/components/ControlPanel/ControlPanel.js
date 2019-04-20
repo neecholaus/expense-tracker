@@ -73,16 +73,16 @@ class ControlPanel extends Component {
 
     /**
      *  Returns an integer formatted as US cents.
-     *  i.e. $45.20 => 4520, 30 => $30.00, 020 => $0.20
      *  @param string
      */
     amountToInt = amount => {
-        let split = [...amount];
+        let inc = amount.split('.');
 
-        // Ensure initial 2 digits are evaluated as dollars instead of cents
-        while(split.length < 3) split.push('0');
+        if(inc.length < 2) inc.push('00');
 
-        return parseInt(split.join('').replace(/\D/g, ''));
+        while(inc[inc.length - 1].length < 2) inc[inc.length - 1] += '0';
+
+        return parseInt(inc.join('').replace(/\D/g, ''));
     }
 
     render() {
