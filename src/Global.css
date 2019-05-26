@@ -1,4 +1,4 @@
-@import '../public/css/custom.scss';
+@import './scss/custom.scss';
 
 body {
     padding: 0;

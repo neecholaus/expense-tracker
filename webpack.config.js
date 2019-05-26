@@ -3,10 +3,10 @@ const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
-    entry: './client/App.js',
+    entry: './src/js/App.js',
     output: {
         path: __dirname + '/public',
-        filename: 'bundle.js'
+        filename: 'bundled.js'
     },
     module: {
         rules: [

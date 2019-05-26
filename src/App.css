@@ -1,5 +1,4 @@
 #main-container {
-    display: flex;
     height: calc(100vh - 43px);
 }
 
@@ -9,12 +8,6 @@
 }
 
 #control-panel {
-    flex: 5;
-    padding: 10px;
-}
-
-#history {
-    flex: 5;
     padding: 10px;
 }
 

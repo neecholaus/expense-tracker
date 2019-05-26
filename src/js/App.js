@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './Global.css';
-import './App.css';
+import {BrowserRouter as Router, Route, NavLink as Link} from "react-router-dom";
+import '../Global.css';
+import '../App.css';
 
 import ControlPanel from './components/ControlPanel/ControlPanel';
 import History from './components/History/History';
@@ -82,13 +83,35 @@ class App extends Component {
                         Expense Tracker
                     </h3>
                 </div>
+
                 <div id="main-container">
-                    <ControlPanel
-                        addExpense={this.addExpense}
-                        emitError={this.emitError} />
-                    <History
-                        expenses={this.state.expenses}
-                        removeExpense={this.removeExpense} />
+                    <Router>
+                        <div className="bg-light" id="nav">
+                            <Link 
+                                to="/control" 
+                                className="nav-item"
+                                activeClassName="active">Control</Link>
+                            <Link 
+                                to="/history" 
+                                className="nav-item"
+                                activeClassName="active">History</Link>
+                        </div>
+                        <Route 
+                            path="/control"
+                            render={() => (
+                                <ControlPanel 
+                                    addExpense={this.addExpense}
+                                    emitError={this.emitError} />
+                            )}
+                        />
+                        <Route 
+                            path="/history"
+                            render={() => (
+                                <History 
+                                    expenses={this.state.expenses}
+                                    removeExpense={this.removeExpense} />
+                            )} />
+                    </Router>
                 </div>
 
                 <div id="appErrors">

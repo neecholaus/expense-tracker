@@ -1,0 +1,10 @@
+#history-container {
+    flex: 5;
+    background: #f8f8f8;
+    height: calc(100vh - 83px);
+}
+
+#history {
+    margin: 0 auto;
+    max-width: 600px;
+}
