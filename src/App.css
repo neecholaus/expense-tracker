@@ -7,10 +7,6 @@
     color: white;
 }
 
-#control-panel {
-    padding: 10px;
-}
-
 #appErrors {
     position: fixed;
     bottom: 0;

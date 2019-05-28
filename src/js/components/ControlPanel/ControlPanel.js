@@ -89,7 +89,7 @@ class ControlPanel extends Component {
     render() {
         return (
             <div id="control-panel-container">
-                <h2>Controls</h2>
+                <h2>Add an Expense</h2>
                 <div id="details">
                     <input
                         type="text"

@@ -8,7 +8,7 @@ class History extends Component {
         return (
             <div id="history-container">
                 <div id="history">
-                    <div className="p-20 pb-0">
+                    <div className="p-0">
                         <h2>History</h2>
                     </div>
                     <Expenses

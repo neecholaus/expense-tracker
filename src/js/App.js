@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, NavLink as Link} from "react-router-dom"
 import '../Global.css';
 import '../App.css';
 
+import Dashboard from './components/Dashboard/Dashboard';
 import ControlPanel from './components/ControlPanel/ControlPanel';
 import History from './components/History/History';
 import Error from './components/Error/Error';
@@ -71,7 +72,7 @@ class App extends Component {
         this.setState({expenses: data});
     }
 
-    componentDidMount = () => {
+    componentWillMount = () => {
         this.ensureLocalStorage();
     }
 
@@ -87,17 +88,31 @@ class App extends Component {
                 <div id="main-container">
                     <Router>
                         <div className="bg-light" id="nav">
-                            <Link 
-                                to="/control" 
+                            <Link
+                                to="/"
+                                exact
                                 className="nav-item"
-                                activeClassName="active">Control</Link>
+                                activeClassName="active">Dashboard</Link>
                             <Link 
-                                to="/history" 
+                                to="/add/" 
+                                className="nav-item"
+                                activeClassName="active">Add</Link>
+                            <Link 
+                                to="/history/" 
                                 className="nav-item"
                                 activeClassName="active">History</Link>
                         </div>
+
+                        <Route
+                            exact
+                            path="/"
+                            render={() => (
+                                <Dashboard
+                                    expenses={this.state.expenses} />
+                            )}
+                        />
                         <Route 
-                            path="/control"
+                            path="/add/"
                             render={() => (
                                 <ControlPanel 
                                     addExpense={this.addExpense}
@@ -105,7 +120,7 @@ class App extends Component {
                             )}
                         />
                         <Route 
-                            path="/history"
+                            path="/history/"
                             render={() => (
                                 <History 
                                     expenses={this.state.expenses}

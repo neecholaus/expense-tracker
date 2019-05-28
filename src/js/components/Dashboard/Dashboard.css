@@ -1,0 +1,15 @@
+#dashboard-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#chart-replacement {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    color: #989898;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+}
