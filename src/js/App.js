@@ -7,12 +7,13 @@ import '../App.css';
 import Dashboard from './components/Dashboard/Dashboard';
 import ControlPanel from './components/ControlPanel/ControlPanel';
 import History from './components/History/History';
-import Error from './components/Error/Error';
+import Notification from './components/Notification/Notification';
 
 class App extends Component {
     state = {
         expenses: [],
-        errors: []
+        errors: [],
+        notifs: []
     }
 
     addExpense = expense => {
@@ -20,6 +21,11 @@ class App extends Component {
         this.setState({
             expenses: [...this.state.expenses, expense]
         }, this.syncStateToLocal);
+
+        this.emitNotif({
+            type: 'success',
+            content: 'Expense added.'
+        });
     }
 
     removeExpense = id => {
@@ -31,22 +37,29 @@ class App extends Component {
     emitError = error => {
         let id = new Date().getTime();
 
-        this.setState({
-            errors: [...this.state.errors, {id, content: error}]
-        })
-
-        this.dispatchErrorRemoval(id);
+        this.emitNotif({type: 'error', content: error});
     }
 
-    removeError = id => {
+    emitNotif = notif => {
+        let id = new Date().getTime();
+        notif.id = id;
+
         this.setState({
-            errors: this.state.errors.filter(error => error.id !== id)
+            notifs: [...this.state.notifs, notif]
+        });
+
+        this.dispatchNotifRemoval(id);
+    }
+
+    removeNotif = id => {
+        this.setState({
+            notifs: this.state.notifs.filter(notif => notif.id !== id)
         })
     }
 
-    dispatchErrorRemoval = id => {
+    dispatchNotifRemoval = id => {
         setTimeout(() => {
-            this.removeError(id);
+            this.removeNotif(id);
         }, 3500);
     }
 
@@ -129,13 +142,13 @@ class App extends Component {
                     </Router>
                 </div>
 
-                <div id="appErrors">
-                    {this.state.errors.map(error => {
+                <div id="app-notifs">
+                    {this.state.notifs.map(notif => {
                         return (
-                            <Error
-                                key={error.id}
-                                error={error}
-                                removeError={this.removeError} />
+                            <Notification
+                                key={notif.id}
+                                notif={notif}
+                                removeNotif={this.removeNotif} />
                         )
                     })}
                 </div>

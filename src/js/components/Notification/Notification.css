@@ -1,0 +1,32 @@
+.notif {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 5px;
+    transition: all ease 0.3s;
+    color: white;
+    cursor: pointer;
+}
+
+.notif:hover {
+    opacity: 0.8;
+    transition: all ease 0.05s;
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+.notif p {
+    margin: 0;
+}
+
+.notif.notif-error {
+    background: #e23b49;
+    color: white;
+    cursor: pointer;
+}
+
+.notif.notif-success {
+    background: green;
+}

@@ -32,7 +32,6 @@ class ControlPanel extends Component {
         const value = e.target.value;
 
         this.setState({[name]: value});
-        console.log(this.props);
     }
 
     addExpense = () => {
